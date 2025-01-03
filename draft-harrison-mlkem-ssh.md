@@ -63,11 +63,11 @@ This document defines Post-Quantum key exchange methods based on Module-lattice 
 
 # Introduction
 
-The security of traditional key exchange methods used in Secure Shell (SSH) [RFC4251] relies on the algorithms being too computationally complex to be broken. The development of quantum computers poses a threat to the complexity of these algorithms. Given sufficiently powerful quantum computers, these traditional algorithms would be vulnerable to attack.
+Secure Shell (SSH) [RFC4251] is a secure remote login protocol. The key exchange protocol described in [RFC4253] supports an extensible set of methods. The security of traditional key exchange methods used in Secure Shell (SSH) [RFC4251] relies on the algorithms being too computationally complex to be broken. The development of quantum computers poses a threat to the complexity of these algorithms. Given sufficiently powerful quantum computers, these traditional algorithms would be vulnerable to attack.
 
 Additionally, the threat of "harvest-now-decrypt-later" attacks could creates a risk in the current landscape before sufficiently powerful quantum computers are available. In this attack, the data would be collected and decrypted by these quantum computers at a later date.
 
-This document addresses the problem by proposing the use of post-quantum key encapsulation mechanisms (KEMs) for us in SSH as key exchange algorithms. The post-quantum KEM discussed in this document is ML-KEM which is based on CRYSTALS-KYBER. [FIPS203] standardized the ML-KEM scheme in 2024 with three parameter variants, ML-KEM-512, ML-KEM-768, ML-KEM-1024. ML-KEM is a NIST approved mechanism that is believed to be secure against an attacker with a quantum computer.
+This document addresses the problem by proposing the use of post-quantum key encapsulation mechanisms (KEMs) to extend the SSH [RFC4253] key exchange. The post-quantum KEM discussed in this document is ML-KEM which is based on CRYSTALS-KYBER. [FIPS203] standardized the ML-KEM scheme in 2024 with three parameter variants, ML-KEM-512, ML-KEM-768, ML-KEM-1024. ML-KEM is a NIST approved mechanism that is believed to be secure against an attacker with a quantum computer.
 
 
 # Conventions and Definitions
@@ -77,11 +77,11 @@ This document addresses the problem by proposing the use of post-quantum key enc
 {::boilerplate bcp79-tagged}
 
 # Key Exchange Method: ML-KEM
-When using ML-KEM as a Key Exchange Method, the key would be exchanged as described in [FIPS203]. The client, the initiating party would start with the generation of the encapsulation and decapsulation key. The encapsulation (public) key is then shared with the server. The server uses the (public) key to encapsulate the shared secret key into the ciphertext and transmits this back to the client. The client then uses the previously generated (private) key to decapsulate the shared secret from the server's ciphertext.
+When using ML-KEM as Key Exchange Method, the shared secret key would be exchanged as described in section 3.1 of [FIPS203]. The initiating party, the client would begine with the generation of the (public) encapsulation and (private) decapsulation key. The (public) encapsulation key is then shared with the server. The server uses this public encapsulation key to encapsulate the shared secret key into the ciphertext and transmits this ciphertext back to the client. The client then uses their previously generated private key to decapsulate the shared secret received from the server's ciphertext.
 
 # Security Considerations
 
-The security of ML-KEM is based on the presumed difficulty of solving the MLWE problem, based on the computational problems in module lattices. [FIPS203]
+The security of ML-KEM is based on the presumed difficulty of solving the Module Learning With Errors (MLWE) problem, based on the computational problems in module lattices. [FIPS203]
 
 # IANA Considerations
 

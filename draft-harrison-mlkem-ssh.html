@@ -1149,7 +1149,26 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-key-exchange-method-ml-kem" class="internal xref">Key Exchange Method: ML-KEM</a></p>
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-key-exchange-method-ml-kem" class="internal xref">Key Exchange Method: ML-KEM</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-ml-kem-key-exchange-message" class="internal xref">ML-KEM Key Exchange Message Numbers</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-ml-kem-key-exchange-method-" class="internal xref">ML-KEM Key Exchange Method Names</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2.2.1">
+                    <p id="section-toc.1-1.3.2.2.2.1.1"><a href="#section-3.2.1" class="auto internal xref">3.2.1</a>.  <a href="#name-ml-kem-512-sha256" class="internal xref">ml-kem-512-sha256</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2.2.2">
+                    <p id="section-toc.1-1.3.2.2.2.2.1"><a href="#section-3.2.2" class="auto internal xref">3.2.2</a>.  <a href="#name-ml-kem-768-sha256" class="internal xref">ml-kem-768-sha256</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2.2.3">
+                    <p id="section-toc.1-1.3.2.2.2.3.1"><a href="#section-3.2.3" class="auto internal xref">3.2.3</a>.  <a href="#name-ml-kem-1024-sha384" class="internal xref">ml-kem-1024-sha384</a></p>
+</li>
+                </ul>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
@@ -1183,9 +1202,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">Secure Shell (SSH) <span>[<a href="#RFC4251" class="cite xref">RFC4251</a>]</span> is a secure remote login protocol. The key exchange protocol described in [RFC4253] supports an extensible set of methods. The security of traditional key exchange methods used in Secure Shell (SSH) <span>[<a href="#RFC4251" class="cite xref">RFC4251</a>]</span> relies on the algorithms being too computationally complex to be broken. The development of quantum computers poses a threat to the complexity of these algorithms. Given sufficiently powerful quantum computers, these traditional algorithms would be vulnerable to attack.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">Secure Shell (SSH) <span>[<a href="#RFC4251" class="cite xref">RFC4251</a>]</span> is a secure remote login protocol. The key exchange protocol described in <span>[<a href="#RFC4253" class="cite xref">RFC4253</a>]</span> supports an extensible set of methods. The security of traditional key exchange methods used in Secure Shell (SSH) <span>[<a href="#RFC4251" class="cite xref">RFC4251</a>]</span> relies on the algorithms being too computationally complex to be broken. The development of quantum computers poses a threat to the complexity of these algorithms. Given sufficiently powerful quantum computers, these traditional algorithms would be vulnerable to attack.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">Additionally, the threat of "harvest-now-decrypt-later" attacks could creates a risk in the current landscape before sufficiently powerful quantum computers are available. In this attack, the data would be collected and decrypted by these quantum computers at a later date.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">This document addresses the problem by proposing the use of post-quantum key encapsulation mechanisms (KEMs) to extend the SSH [RFC4253] key exchange. The post-quantum KEM discussed in this document is ML-KEM which is based on CRYSTALS-KYBER. <span>[<a href="#FIPS203" class="cite xref">FIPS203</a>]</span> standardized the ML-KEM scheme in 2024 with three parameter variants, ML-KEM-512, ML-KEM-768, ML-KEM-1024. ML-KEM is a NIST approved mechanism that is believed to be secure against an attacker with a quantum computer.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-3">This document addresses the problem by proposing the use of post-quantum key encapsulation mechanisms (KEMs) to extend the SSH <span>[<a href="#RFC4253" class="cite xref">RFC4253</a>]</span> key exchange. The post-quantum KEM discussed in this document is ML-KEM which is based on CRYSTALS-KYBER. <span>[<a href="#FIPS203" class="cite xref">FIPS203</a>]</span> standardized the ML-KEM scheme in 2024 with three parameter variants, ML-KEM-512, ML-KEM-768, ML-KEM-1024. ML-KEM is a NIST approved mechanism that is believed to be secure against an attacker with a quantum computer.<a href="#section-1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1206,7 +1225,55 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-key-exchange-method-ml-kem">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-key-exchange-method-ml-kem" class="section-name selfRef">Key Exchange Method: ML-KEM</a>
       </h2>
-<p id="section-3-1">When using ML-KEM as Key Exchange Method, the shared secret key would be exchanged as described in section 3.1 of <span>[<a href="#FIPS203" class="cite xref">FIPS203</a>]</span>. The initiating party, the client would begine with the generation of the (public) encapsulation and (private) decapsulation key. The (public) encapsulation key is then shared with the server. The server uses this public encapsulation key to encapsulate the shared secret key into the ciphertext and transmits this ciphertext back to the client. The client then uses their previously generated private key to decapsulate the shared secret received from the server's ciphertext.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">When using ML-KEM as the Key Exchange Method, the shared secret key would be exchanged as described in section 3.1 of <span>[<a href="#FIPS203" class="cite xref">FIPS203</a>]</span>. The initiating party, the client would begin with the generation of the (public) encapsulation and (private) decapsulation key. The (public) encapsulation key is then shared with the server. The server uses this public encapsulation key to encapsulate the shared secret key into the ciphertext and transmits this ciphertext back to the client. The client then uses their previously generated private key to decapsulate the shared secret received from the server's ciphertext.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<div id="ml-kem-key-exchange-message-numbers">
+<section id="section-3.1">
+        <h3 id="name-ml-kem-key-exchange-message">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-ml-kem-key-exchange-message" class="section-name selfRef">ML-KEM Key Exchange Message Numbers</a>
+        </h3>
+<p id="section-3.1-1">When using ML-KEM as the Key Exchange Method, the following existing namespace message numbers <span class="bcp14">MAY</span> be used:
+         #define SSH_MSG_KEX_ECDH_INIT               30
+         #define SSH_MSG_KEX_ECDH_REPLY              31<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="ml-kem-key-exchange-method-names">
+<section id="section-3.2">
+        <h3 id="name-ml-kem-key-exchange-method-">
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-ml-kem-key-exchange-method-" class="section-name selfRef">ML-KEM Key Exchange Method Names</a>
+        </h3>
+<p id="section-3.2-1">The ML-KEM key exchange method names defined in this document (to be used in SSH_MSG_KEXINIT <span>[<a href="#RFC4253" class="cite xref">RFC4253</a>]</span>) are
+ml-kem-512-sha256
+ml-kem-768-sha256
+ml-kem-1024-sha384<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<div id="ml-kem-512-sha256">
+<section id="section-3.2.1">
+          <h4 id="name-ml-kem-512-sha256">
+<a href="#section-3.2.1" class="section-number selfRef">3.2.1. </a><a href="#name-ml-kem-512-sha256" class="section-name selfRef">ml-kem-512-sha256</a>
+          </h4>
+<p id="section-3.2.1-1">ml-kem-512-sha256 defines the ml-kem-768 public key and ciphertext from the client and server respectively encoded as octet strings. The shared secret is decapsulated from teh ciphertext using the client post-quantum KEM private key as defined in <span>[<a href="#FIPS203" class="cite xref">FIPS203</a>]</span>.<a href="#section-3.2.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.2.1-2">The HASH function used in this key exchange <span>[<a href="#RFC4253" class="cite xref">RFC4253</a>]</span> is SHA-256 <span><a href="#RFC6234" class="internal xref">nist-sha2</a> [<a href="#RFC6234" class="cite xref">RFC6234</a>]</span><a href="#section-3.2.1-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="ml-kem-768-sha256">
+<section id="section-3.2.2">
+          <h4 id="name-ml-kem-768-sha256">
+<a href="#section-3.2.2" class="section-number selfRef">3.2.2. </a><a href="#name-ml-kem-768-sha256" class="section-name selfRef">ml-kem-768-sha256</a>
+          </h4>
+<p id="section-3.2.2-1">ml-kem-768-sha256 defines the ml-kem-768 public key and ciphertext from the client and server respectively encoded as octet strings. The shared secret is decapsulated from teh ciphertext using the client post-quantum KEM private key as defined in <span>[<a href="#FIPS203" class="cite xref">FIPS203</a>]</span>.<a href="#section-3.2.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2.2-2">The HASH function used in this key exchange <span>[<a href="#RFC4253" class="cite xref">RFC4253</a>]</span> is SHA-256 <span><a href="#RFC6234" class="internal xref">nist-sha2</a> [<a href="#RFC6234" class="cite xref">RFC6234</a>]</span><a href="#section-3.2.2-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="ml-kem-1024-sha384">
+<section id="section-3.2.3">
+          <h4 id="name-ml-kem-1024-sha384">
+<a href="#section-3.2.3" class="section-number selfRef">3.2.3. </a><a href="#name-ml-kem-1024-sha384" class="section-name selfRef">ml-kem-1024-sha384</a>
+          </h4>
+<p id="section-3.2.3-1">ml-kem-1024-sha384 defines the ml-kem-768 public key and ciphertext from the client and server respectively encoded as octet strings. The shared secret is decapsulated from teh ciphertext using the client post-quantum KEM private key as defined in <span>[<a href="#FIPS203" class="cite xref">FIPS203</a>]</span>.<a href="#section-3.2.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.2.3-2">The HASH function used in this key exchange <span>[<a href="#RFC4253" class="cite xref">RFC4253</a>]</span> is SHA-384 <span><a href="#RFC6234" class="internal xref">nist-sha2</a> [<a href="#RFC6234" class="cite xref">RFC6234</a>]</span><a href="#section-3.2.3-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
 </section>
 </div>
 <div id="security-considerations">
@@ -1243,6 +1310,14 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <dt id="RFC4251">[RFC4251]</dt>
         <dd>
 <span class="refAuthor">Ylonen, T.</span> and <span class="refAuthor">C. Lonvick, Ed.</span>, <span class="refTitle">"The Secure Shell (SSH) Protocol Architecture"</span>, <span class="seriesInfo">RFC 4251</span>, <span class="seriesInfo">DOI 10.17487/RFC4251</span>, <time datetime="2006-01" class="refDate">January 2006</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4251">https://www.rfc-editor.org/rfc/rfc4251</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC4253">[RFC4253]</dt>
+        <dd>
+<span class="refAuthor">Ylonen, T.</span> and <span class="refAuthor">C. Lonvick, Ed.</span>, <span class="refTitle">"The Secure Shell (SSH) Transport Layer Protocol"</span>, <span class="seriesInfo">RFC 4253</span>, <span class="seriesInfo">DOI 10.17487/RFC4253</span>, <time datetime="2006-01" class="refDate">January 2006</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4253">https://www.rfc-editor.org/rfc/rfc4253</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC6234">[RFC6234]</dt>
+        <dd>
+<span class="refAuthor">Eastlake 3rd, D.</span> and <span class="refAuthor">T. Hansen</span>, <span class="refTitle">"US Secure Hash Algorithms (SHA and SHA-based HMAC and HKDF)"</span>, <span class="seriesInfo">RFC 6234</span>, <span class="seriesInfo">DOI 10.17487/RFC6234</span>, <time datetime="2011-05" class="refDate">May 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6234">https://www.rfc-editor.org/rfc/rfc6234</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8174">[RFC8174]</dt>
       <dd>

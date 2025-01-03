@@ -32,6 +32,8 @@ author:
 normative:
   RFC2119:
   RFC4251:
+  RFC4253:
+  RFC6234:
   FIPS203:
 
 informative:
@@ -77,7 +79,34 @@ This document addresses the problem by proposing the use of post-quantum key enc
 {::boilerplate bcp79-tagged}
 
 # Key Exchange Method: ML-KEM
-When using ML-KEM as Key Exchange Method, the shared secret key would be exchanged as described in section 3.1 of [FIPS203]. The initiating party, the client would begine with the generation of the (public) encapsulation and (private) decapsulation key. The (public) encapsulation key is then shared with the server. The server uses this public encapsulation key to encapsulate the shared secret key into the ciphertext and transmits this ciphertext back to the client. The client then uses their previously generated private key to decapsulate the shared secret received from the server's ciphertext.
+When using ML-KEM as the Key Exchange Method, the shared secret key would be exchanged as described in section 3.1 of [FIPS203]. The initiating party, the client would begin with the generation of the (public) encapsulation and (private) decapsulation key. The (public) encapsulation key is then shared with the server. The server uses this public encapsulation key to encapsulate the shared secret key into the ciphertext and transmits this ciphertext back to the client. The client then uses their previously generated private key to decapsulate the shared secret received from the server's ciphertext.
+
+## ML-KEM Key Exchange Message Numbers
+When using ML-KEM as the Key Exchange Method, the following existing namespace message numbers MAY be used:
+         #define SSH_MSG_KEX_ECDH_INIT               30
+         #define SSH_MSG_KEX_ECDH_REPLY              31
+
+## ML-KEM Key Exchange Method Names
+The ML-KEM key exchange method names defined in this document (to be used in SSH_MSG_KEXINIT [RFC4253]) are
+ml-kem-512-sha256
+ml-kem-768-sha256
+ml-kem-1024-sha384
+
+### ml-kem-512-sha256
+ml-kem-512-sha256 defines the ml-kem-768 public key and ciphertext from the client and server respectively encoded as octet strings. The shared secret is decapsulated from teh ciphertext using the client post-quantum KEM private key as defined in [FIPS203].
+
+The HASH function used in this key exchange [RFC4253] is SHA-256 [nist-sha2] [RFC6234]
+
+### ml-kem-768-sha256
+ml-kem-768-sha256 defines the ml-kem-768 public key and ciphertext from the client and server respectively encoded as octet strings. The shared secret is decapsulated from teh ciphertext using the client post-quantum KEM private key as defined in [FIPS203].
+
+The HASH function used in this key exchange [RFC4253] is SHA-256 [nist-sha2] [RFC6234]
+
+### ml-kem-1024-sha384
+ml-kem-1024-sha384 defines the ml-kem-768 public key and ciphertext from the client and server respectively encoded as octet strings. The shared secret is decapsulated from teh ciphertext using the client post-quantum KEM private key as defined in [FIPS203].
+
+The HASH function used in this key exchange [RFC4253] is SHA-384 [nist-sha2] [RFC6234]
+
 
 # Security Considerations
 

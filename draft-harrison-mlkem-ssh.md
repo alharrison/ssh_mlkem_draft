@@ -57,9 +57,7 @@ informative:
 
 --- abstract
 
-This document defines Post-Quantum key exchange methods based on 
-Module-lattice post-quantum key encapsulation schemes.  These methods
-are defined for use in the SSH Transport Layer Protocol.
+This document defines Post-Quantum key exchange methods based on Module-lattice post-quantum key encapsulation schemes.  These methods are defined for use in the SSH Transport Layer Protocol.
 
 --- middle
 

@@ -4,8 +4,8 @@
 
 Network Working Group                                        A. Harrison
 Internet-Draft                                                     Cisco
-Intended status: Informational                            6 January 2025
-Expires: 10 July 2025
+Intended status: Informational                            9 January 2025
+Expires: 13 July 2025
 
 
                    Module-Lattice Key Exchange in SSH
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 July 2025.
+   This Internet-Draft will expire on 13 July 2025.
 
 Copyright Notice
 
@@ -171,41 +171,49 @@ Table of Contents
 3.1.  ML-KEM Key Exchange Message Numbers
 
    When using ML-KEM as the Key Exchange Method, the following existing
-   namespace message numbers MAY be used: #define SSH_MSG_KEX_ECDH_INIT
-   30 #define SSH_MSG_KEX_ECDH_REPLY 31
+   namespace message numbers MAY be used:
+
+   #define SSH_MSG_KEX_ECDH_INIT               30
+   #define SSH_MSG_KEX_ECDH_REPLY              31
 
 3.2.  ML-KEM Key Exchange Method Names
 
    The ML-KEM key exchange method names defined in this document (to be
-   used in SSH_MSG_KEXINIT [RFC4253]) are ml-kem-512-sha256 ml-kem-
-   768-sha256 ml-kem-1024-sha384
+   used in SSH_MSG_KEXINIT [RFC4253]) are
+
+   ml-kem-512-sha256
+   ml-kem-768-sha256
+   ml-kem-1024-sha384
 
 3.2.1.  ml-kem-512-sha256
 
-   ml-kem-512-sha256 defines the ml-kem-768 public key and ciphertext
-   from the client and server respectively encoded as octet strings.
-   The shared secret is decapsulated from teh ciphertext using the
-   client post-quantum KEM private key as defined in [FIPS203].
+   ml-kem-512-sha256 defines the ml-kem-512 C_PK public key and
+   ciphertext S_CT from the client and server respectively which are
+   encoded as octet strings.  The K_PQ shared secret is decapsulated
+   from the ciphertext S_CT using the client post-quantum KEM private
+   key as defined in [FIPS203].
 
    The HASH function used in this key exchange [RFC4253] is SHA-256
    nist-sha2 [RFC6234]
 
 3.2.2.  ml-kem-768-sha256
 
-   ml-kem-768-sha256 defines the ml-kem-768 public key and ciphertext
-   from the client and server respectively encoded as octet strings.
-   The shared secret is decapsulated from teh ciphertext using the
-   client post-quantum KEM private key as defined in [FIPS203].
+   ml-kem-768-sha256 defines the ml-kem-768 C_PK public key and
+   ciphertext S_CT from the client and server respectively which are
+   encoded as octet strings.  The K_PQ shared secret is decapsulated
+   from the ciphertext S_CT using the client post-quantum KEM private
+   key as defined in [FIPS203].
 
    The HASH function used in this key exchange [RFC4253] is SHA-256
    nist-sha2 [RFC6234]
 
 3.2.3.  ml-kem-1024-sha384
 
-   ml-kem-1024-sha384 defines the ml-kem-768 public key and ciphertext
-   from the client and server respectively encoded as octet strings.
-   The shared secret is decapsulated from teh ciphertext using the
-   client post-quantum KEM private key as defined in [FIPS203].
+   ml-kem-1024-sha384 defines the ml-kem-1024 C_PK public key and
+   ciphertext S_CT from the client and server respectively which are
+   encoded as octet strings.  The K_PQ shared secret is decapsulated
+   from the ciphertext S_CT using the client post-quantum KEM private
+   key as defined in [FIPS203].
 
    The HASH function used in this key exchange [RFC4253] is SHA-384
    nist-sha2 [RFC6234]
@@ -221,7 +229,7 @@ Table of Contents
    IANA is requested to register new method names "ml-kem-512-sha256",
    "ml-kem-768-sha256", "ml-kem-1024-sha384", and to be registered by
    IANA in the "Key Exchange Method Names" registry for SSH [IANA-SSH]
-   with a reference field to this RFC and the "OK to implment" field of
+   with a reference field to this RFC and the "OK to implement" field of
    "May".
 
 6.  References
@@ -260,6 +268,11 @@ Table of Contents
    [IANA-SSH] IANA, "Secure Shell (SSH) Protocol Parameters", 2021,
               <https://www.iana.org/assignments/ssh-parameters/ssh-
               parameters.xhtml>.
+
+   [RFC5656]  Stebila, D. and J. Green, "Elliptic Curve Algorithm
+              Integration in the Secure Shell Transport Layer",
+              DOI 10.17487/RFC5656, December 2009,
+              <https://www.rfc-editor.org/info/rfc5656>.
 
 Acknowledgments
 

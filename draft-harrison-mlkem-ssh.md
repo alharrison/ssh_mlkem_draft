@@ -55,6 +55,18 @@ informative:
     seriesinfo:
       FIPS PUB: 203
     date: 12 Aug 2024
+  RFC5656:
+    -:
+    target: https://www.rfc-editor.org/info/rfc5656
+    title: "Elliptic Curve Algorithm Integration in the Secure Shell Transport Layer"
+    author:
+      -
+        name: D. Stebila
+      -
+        name: J. Green
+    date: December 2009
+    seriesinfo:
+      DOI: 10.17487/RFC5656
 
 
 --- abstract
@@ -100,27 +112,31 @@ with a SSH_DISCONNECT_KEY_EXCHANGE_FAILED as the reason if the S_CT length does 
 
 ## ML-KEM Key Exchange Message Numbers
 When using ML-KEM as the Key Exchange Method, the following existing namespace message numbers MAY be used:
-         #define SSH_MSG_KEX_ECDH_INIT               30
-         #define SSH_MSG_KEX_ECDH_REPLY              31
+
+    #define SSH_MSG_KEX_ECDH_INIT               30
+    #define SSH_MSG_KEX_ECDH_REPLY              31
+
 
 ## ML-KEM Key Exchange Method Names
 The ML-KEM key exchange method names defined in this document (to be used in SSH_MSG_KEXINIT [RFC4253]) are
-ml-kem-512-sha256
-ml-kem-768-sha256
-ml-kem-1024-sha384
+
+    ml-kem-512-sha256
+    ml-kem-768-sha256
+    ml-kem-1024-sha384
+
 
 ### ml-kem-512-sha256
-ml-kem-512-sha256 defines the ml-kem-768 public key and ciphertext from the client and server respectively encoded as octet strings. The shared secret is decapsulated from teh ciphertext using the client post-quantum KEM private key as defined in [FIPS203].
+ml-kem-512-sha256 defines the ml-kem-512 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203].
 
 The HASH function used in this key exchange [RFC4253] is SHA-256 [nist-sha2] [RFC6234]
 
 ### ml-kem-768-sha256
-ml-kem-768-sha256 defines the ml-kem-768 public key and ciphertext from the client and server respectively encoded as octet strings. The shared secret is decapsulated from teh ciphertext using the client post-quantum KEM private key as defined in [FIPS203].
+ml-kem-768-sha256 defines the ml-kem-768 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203].
 
 The HASH function used in this key exchange [RFC4253] is SHA-256 [nist-sha2] [RFC6234]
 
 ### ml-kem-1024-sha384
-ml-kem-1024-sha384 defines the ml-kem-768 public key and ciphertext from the client and server respectively encoded as octet strings. The shared secret is decapsulated from teh ciphertext using the client post-quantum KEM private key as defined in [FIPS203].
+ml-kem-1024-sha384 defines the ml-kem-1024 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203].
 
 The HASH function used in this key exchange [RFC4253] is SHA-384 [nist-sha2] [RFC6234]
 
@@ -131,7 +147,7 @@ The security of ML-KEM is based on the presumed difficulty of solving the Module
 
 # IANA Considerations
 
-IANA is requested to register new method names "ml-kem-512-sha256", "ml-kem-768-sha256", "ml-kem-1024-sha384", and to be registered by IANA in the "Key Exchange Method Names" registry for SSH [IANA-SSH] with a reference field to this RFC and the "OK to implment" field of "May".
+IANA is requested to register new method names "ml-kem-512-sha256", "ml-kem-768-sha256", "ml-kem-1024-sha384", and to be registered by IANA in the "Key Exchange Method Names" registry for SSH [IANA-SSH] with a reference field to this RFC and the "OK to implement" field of "May".
 
 --- back
 

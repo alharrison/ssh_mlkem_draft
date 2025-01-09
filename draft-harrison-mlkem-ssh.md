@@ -98,8 +98,6 @@ The post-quantum KEM discussed in this document is ML-KEM which is based on CRYS
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
-{::boilerplate bcp78-tagged}
-{::boilerplate bcp79-tagged}
 
 # Key Exchange Method: ML-KEM
 The client sends SSH_MSG_KEXDH_INIT [RFC4253] or SSH_MSG_KEX_ECDH_INIT [RFC5656]. With this, the client sends the ephemeral client public key, C_PK. C_PK represents the 'pk' output of the post-quantum KEM's 'KeyGen' at the client.

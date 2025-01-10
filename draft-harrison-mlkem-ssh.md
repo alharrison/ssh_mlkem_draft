@@ -152,4 +152,4 @@ IANA is requested to register new method names "ml-kem-512-sha256", "ml-kem-768-
 # Acknowledgments
 {:numbered="false"}
 
-Open Quantum Safe has an existing implementation of ML-KEM based key encapsulation methods in all three parameter variants. Their fork of OpenSSH contains an implementation using these algorithms for SSH key exchange algorithms.
+Open Quantum Safe has an existing implementation of ML-KEM based key encapsulation methods in all three parameter variants. Their fork of OpenSSH (OQS-SSH) contains an implementation using these algorithms for SSH key exchange algorithms. The authors would like thank Open Quantum Safe for their example implementations of postquantum algorithms.

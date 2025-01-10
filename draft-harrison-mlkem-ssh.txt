@@ -4,8 +4,8 @@
 
 Network Working Group                                        A. Harrison
 Internet-Draft                                                     Cisco
-Intended status: Informational                            9 January 2025
-Expires: 13 July 2025
+Intended status: Informational                           10 January 2025
+Expires: 14 July 2025
 
 
                    Module-Lattice Key Exchange in SSH
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 July 2025.
+   This Internet-Draft will expire on 14 July 2025.
 
 Copyright Notice
 
@@ -274,8 +274,10 @@ Acknowledgments
 
    Open Quantum Safe has an existing implementation of ML-KEM based key
    encapsulation methods in all three parameter variants.  Their fork of
-   OpenSSH contains an implementation using these algorithms for SSH key
-   exchange algorithms.
+   OpenSSH (OQS-SSH) contains an implementation using these algorithms
+   for SSH key exchange algorithms.  The authors would like thank Open
+   Quantum Safe for their example implementations of postquantum
+   algorithms.
 
 Author's Address
 

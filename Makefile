@@ -13,3 +13,5 @@ else
 	    https://github.com/martinthomson/i-d-template $(LIBDIR)
 endif
 endif
+export UPLOAD_EMAIL ?= aleharri@cisco.com
+export UPLOAD_NAME ?= Alexander Harrison

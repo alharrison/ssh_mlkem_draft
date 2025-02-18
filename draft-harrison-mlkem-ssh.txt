@@ -4,8 +4,8 @@
 
 Network Working Group                                        A. Harrison
 Internet-Draft                                                     Cisco
-Intended status: Informational                           10 January 2025
-Expires: 14 July 2025
+Intended status: Informational                          18 February 2025
+Expires: 22 August 2025
 
 
                    Module-Lattice Key Exchange in SSH
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 July 2025.
+   This Internet-Draft will expire on 22 August 2025.
 
 Copyright Notice
 
@@ -222,11 +222,10 @@ Table of Contents
 
 5.  IANA Considerations
 
-   IANA is requested to register new method names "ml-kem-512-sha256",
-   "ml-kem-768-sha256", "ml-kem-1024-sha384", and to be registered by
-   IANA in the "Key Exchange Method Names" registry for SSH [IANA-SSH]
-   with a reference field to this RFC and the "OK to implement" field of
-   "May".
+   IANA is requested to register new method names "mlkem512-sha256",
+   "mlkem768-sha256", "mlkem1024-sha384", and to be registered by IANA
+   in the "Key Exchange Method Names" registry for SSH [IANA-SSH] with a
+   reference field to this RFC and the "OK to implement" field of "May".
 
 6.  References
 

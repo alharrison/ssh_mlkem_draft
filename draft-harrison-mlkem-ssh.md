@@ -145,7 +145,7 @@ The security of ML-KEM is based on the presumed difficulty of solving the Module
 
 # IANA Considerations
 
-IANA is requested to register new method names "ml-kem-512-sha256", "ml-kem-768-sha256", "ml-kem-1024-sha384", and to be registered by IANA in the "Key Exchange Method Names" registry for SSH [IANA-SSH] with a reference field to this RFC and the "OK to implement" field of "May".
+IANA is requested to register new method names "mlkem512-sha256", "mlkem768-sha256", "mlkem1024-sha384", and to be registered by IANA in the "Key Exchange Method Names" registry for SSH [IANA-SSH] with a reference field to this RFC and the "OK to implement" field of "May".
 
 --- back
 

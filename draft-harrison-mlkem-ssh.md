@@ -129,7 +129,7 @@ mlkem512-sha256 defines the ml-kem-512 C_PK public key and ciphertext S_CT from 
 The HASH function used in this key exchange [RFC4253] is SHA-256 [nist-sha2] [RFC6234]
 
 ### mlkem768-sha256
-mlkem768-sha256 defines the mlkem-768 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203].
+mlkem768-sha256 defines the ml-kem-768 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203].
 
 The HASH function used in this key exchange [RFC4253] is SHA-256 [nist-sha2] [RFC6234]
 

@@ -118,23 +118,23 @@ When using ML-KEM as the Key Exchange Method, the following existing namespace m
 ## ML-KEM Key Exchange Method Names
 The ML-KEM key exchange method names defined in this document (to be used in SSH_MSG_KEXINIT [RFC4253]) are
 
-    ml-kem-512-sha256
-    ml-kem-768-sha256
-    ml-kem-1024-sha384
+    mlkem512-sha256
+    mlkem768-sha256
+    mlkem1024-sha384
 
 
-### ml-kem-512-sha256
-ml-kem-512-sha256 defines the ml-kem-512 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203].
-
-The HASH function used in this key exchange [RFC4253] is SHA-256 [nist-sha2] [RFC6234]
-
-### ml-kem-768-sha256
-ml-kem-768-sha256 defines the ml-kem-768 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203].
+### mlkem512-sha256
+mlkem512-sha256 defines the ml-kem-512 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203].
 
 The HASH function used in this key exchange [RFC4253] is SHA-256 [nist-sha2] [RFC6234]
 
-### ml-kem-1024-sha384
-ml-kem-1024-sha384 defines the ml-kem-1024 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203].
+### mlkem768-sha256
+mlkem768-sha256 defines the mlkem768 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203].
+
+The HASH function used in this key exchange [RFC4253] is SHA-256 [nist-sha2] [RFC6234]
+
+### mlkem1024-sha384
+mlkem1024-sha384 defines the ml-kem-1024 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203].
 
 The HASH function used in this key exchange [RFC4253] is SHA-384 [nist-sha2] [RFC6234]
 

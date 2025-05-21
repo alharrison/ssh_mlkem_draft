@@ -21,3 +21,4 @@ draft-harrison-mlkem-ssh.xml
 package-lock.json
 report.xml
 !requirements.txt
+!draft-harrison-sshm-mlkem-*.txt

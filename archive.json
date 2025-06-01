@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-29T02:06:38.427346+00:00",
+  "timestamp": "2025-06-01T02:32:02.415264+00:00",
   "repo": "alharrison/ssh_mlkem_draft",
   "labels": [
     {
@@ -59,11 +59,13 @@
       "state": "OPEN",
       "author": "csosto-pk",
       "authorAssociation": "NONE",
-      "assignees": [],
+      "assignees": [
+        "alharrison"
+      ],
       "labels": [],
       "body": "I did not compile it. It may need to fix the references to compile. \r\n\r\nPlease proof read. Also please check if OQS OpenSSH encodes K_PQ as mpint. Since it sia 256-bit value it could, it is not necessary to encode it as as a byte arraw because it is not the concatenation of two things. \r\n\r\nI would also suggest to consider dropping MLKEM-512, but since you have the IANA assignments, I guess you can keep it.",
       "createdAt": "2025-05-22T15:23:21Z",
-      "updatedAt": "2025-05-22T15:32:48Z",
+      "updatedAt": "2025-05-29T20:34:09Z",
       "baseRepository": "alharrison/ssh_mlkem_draft",
       "baseRefName": "main",
       "baseRefOid": "62ecece8db11dc8c56fe2bdcff61c36729b54cb9",
@@ -74,7 +76,15 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "alharrison",
+          "authorAssociation": "OWNER",
+          "body": "> I did not compile it. It may need to fix the references to compile.\r\n> \r\n> Please proof read. Also please check if OQS OpenSSH encodes K_PQ as mpint. Since it sia 256-bit value it could, it is not necessary to encode it as as a byte arraw because it is not the concatenation of two things.\r\n> \r\n> I would also suggest to consider dropping MLKEM-512, but since you have the IANA assignments, I guess you can keep it.\r\n\r\nIt actually looks like it did not start this way (https://github.com/open-quantum-safe/openssh/issues/119), but was changed in 2022 here: https://github.com/open-quantum-safe/openssh/commit/e9b0f6f8896039824f78a43623cd14b67f24e2ce so I think we are good there.",
+          "createdAt": "2025-05-29T20:32:43Z",
+          "updatedAt": "2025-05-29T20:32:43Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDONlanz86qkg2b",

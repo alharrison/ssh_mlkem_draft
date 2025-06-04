@@ -3,7 +3,7 @@ title: "Module-Lattice Key Exchange in SSH"
 abbrev: "TODO - Abbreviation"
 category: std
 
-docname: draft-harrison-mlkem-ssh-02
+docname: draft-harrison-sshm-mlkem-00
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
@@ -41,10 +41,10 @@ normative:
   RFC2119:
   RFC4251:
   RFC4253:
-  RFC6234:
   FIPS203:
 
 informative:
+  RFC6234:
   IANA-SSH:
     -: ta
     target: https://www.iana.org/assignments/ssh-parameters/ssh-parameters.xhtml
@@ -63,19 +63,21 @@ informative:
     seriesinfo:
       FIPS PUB: 203
     date: 12 Aug 2024
-  RFC5656:
+  I-D.draft-ietf-sshm-mlkem-hybrid-kex:
     -:
-    target: https://www.rfc-editor.org/info/rfc5656
-    title: "Elliptic Curve Algorithm Integration in the Secure Shell Transport Layer"
+    target: https://datatracker.ietf.org/doc/draft-ietf-sshm-mlkem-hybrid-kex/
+    title: PQ/T Hybrid Key Exchange in SSH
     author:
       -
-        name: D. Stebila
+        ins: P. Kampanakis
+        name: Panos Kampanakis
       -
-        name: J. Green
-    date: December 2009
-    seriesinfo:
-      DOI: 10.17487/RFC5656
-
+        ins: D. Stabila
+        name: Douglas Stebila
+      -
+        ins: T. Hansen
+        name: Torben Hansen
+        
 
 --- abstract
 

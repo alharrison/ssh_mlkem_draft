@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-03T02:08:40.847999+00:00",
+  "timestamp": "2025-06-05T02:07:36.812771+00:00",
   "repo": "alharrison/ssh_mlkem_draft",
   "labels": [
     {
@@ -56,26 +56,28 @@
       "id": "PR_kwDONlanz86XP-I-",
       "title": "Some fixes",
       "url": "https://github.com/alharrison/ssh_mlkem_draft/pull/1",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "csosto-pk",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [
         "alharrison"
       ],
       "labels": [],
       "body": "I did not compile it. It may need to fix the references to compile. \r\n\r\nPlease proof read. Also please check if OQS OpenSSH encodes K_PQ as mpint. Since it sia 256-bit value it could, it is not necessary to encode it as as a byte arraw because it is not the concatenation of two things. \r\n\r\nI would also suggest to consider dropping MLKEM-512, but since you have the IANA assignments, I guess you can keep it.",
       "createdAt": "2025-05-22T15:23:21Z",
-      "updatedAt": "2025-05-29T20:34:09Z",
+      "updatedAt": "2025-06-03T17:14:58Z",
       "baseRepository": "alharrison/ssh_mlkem_draft",
       "baseRefName": "main",
       "baseRefOid": "62ecece8db11dc8c56fe2bdcff61c36729b54cb9",
       "headRepository": "csosto-pk/ssh_mlkem_draft",
       "headRefName": "patch-1",
       "headRefOid": "b8aeb32670dc8b1418ad11d8d4126e1da9d3a733",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-06-03T17:14:58Z",
+      "mergedAt": "2025-06-03T17:14:58Z",
+      "mergedBy": "alharrison",
+      "mergeCommit": {
+        "oid": "48581c9033ff9196c446db33d9035e578ce141a3"
+      },
       "comments": [
         {
           "author": "alharrison",
@@ -92,7 +94,7 @@
             "abbreviatedOid": "e0cfa29"
           },
           "author": "csosto-pk",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2025-05-22T15:31:33Z",
@@ -105,8 +107,49 @@
               "updatedAt": "2025-05-22T15:31:34Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDONlanz86sddQf",
+          "commit": {
+            "abbreviatedOid": "b8aeb32"
+          },
+          "author": "alharrison",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-06-03T17:14:29Z",
+          "updatedAt": "2025-06-03T17:14:29Z",
+          "comments": []
         }
       ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDONlanz86ZGSr9",
+      "title": "Updating references and docname",
+      "url": "https://github.com/alharrison/ssh_mlkem_draft/pull/2",
+      "state": "OPEN",
+      "author": "alharrison",
+      "authorAssociation": "OWNER",
+      "assignees": [
+        "alharrison"
+      ],
+      "labels": [],
+      "body": "Findings from running the validator:\r\nRemoved a reference no longer used \r\nAdded a informational reference definition for hybrid draft referenced in the body\r\nMoved RFC 6234 from Normative to Information\r\nUpdated the docname to -00 as the name is changing and I believe the new name will start it over at 0",
+      "createdAt": "2025-06-04T21:55:09Z",
+      "updatedAt": "2025-06-04T22:02:27Z",
+      "baseRepository": "alharrison/ssh_mlkem_draft",
+      "baseRefName": "main",
+      "baseRefOid": "48581c9033ff9196c446db33d9035e578ce141a3",
+      "headRepository": "alharrison/ssh_mlkem_draft",
+      "headRefName": "update_refs",
+      "headRefOid": "cd765f35b9a5681a255c59fb1bd7efd81d500057",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }

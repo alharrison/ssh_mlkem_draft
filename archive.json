@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-05T02:07:36.812771+00:00",
+  "timestamp": "2025-06-08T02:23:13.788100+00:00",
   "repo": "alharrison/ssh_mlkem_draft",
   "labels": [
     {
@@ -128,7 +128,7 @@
       "id": "PR_kwDONlanz86ZGSr9",
       "title": "Updating references and docname",
       "url": "https://github.com/alharrison/ssh_mlkem_draft/pull/2",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "alharrison",
       "authorAssociation": "OWNER",
       "assignees": [
@@ -137,19 +137,35 @@
       "labels": [],
       "body": "Findings from running the validator:\r\nRemoved a reference no longer used \r\nAdded a informational reference definition for hybrid draft referenced in the body\r\nMoved RFC 6234 from Normative to Information\r\nUpdated the docname to -00 as the name is changing and I believe the new name will start it over at 0",
       "createdAt": "2025-06-04T21:55:09Z",
-      "updatedAt": "2025-06-04T22:02:27Z",
+      "updatedAt": "2025-06-05T16:15:17Z",
       "baseRepository": "alharrison/ssh_mlkem_draft",
       "baseRefName": "main",
       "baseRefOid": "48581c9033ff9196c446db33d9035e578ce141a3",
       "headRepository": "alharrison/ssh_mlkem_draft",
       "headRefName": "update_refs",
       "headRefOid": "cd765f35b9a5681a255c59fb1bd7efd81d500057",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-06-05T16:15:17Z",
+      "mergedAt": "2025-06-05T16:15:17Z",
+      "mergedBy": "alharrison",
+      "mergeCommit": {
+        "oid": "7a54ab68ec00443212fdb8430f4a8430e13efd44"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDONlanz86s4SlO",
+          "commit": {
+            "abbreviatedOid": "cd765f3"
+          },
+          "author": "csosto-pk",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-06-05T13:52:17Z",
+          "updatedAt": "2025-06-05T13:52:17Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }

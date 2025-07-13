@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-10T02:18:59.953592+00:00",
+  "timestamp": "2025-07-13T02:30:48.328602+00:00",
   "repo": "alharrison/ssh_mlkem_draft",
   "labels": [
     {
@@ -49,7 +49,32 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 3,
+      "id": "I_kwDONlanz87AJRSw",
+      "title": "From Allie B. regarding S_REPLY",
+      "url": "https://github.com/alharrison/ssh_mlkem_draft/issues/3",
+      "state": "OPEN",
+      "author": "csosto-pk",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "> Hey All! \n>      I have a question about draft-harrison-sshm-mlkem - in section 3 the new version states: \n> \n> The server sends SSH_MSG_KEX_KEM_REPLY.  With this, the server sends S_REPLY which is the concatenation of S_CT.\n> \n> I think this is meant to be  'concatenation of S_CT with the server public host key (or certificate)', or something of that nature. \n> \n> Also, I can only find S_REPLY defined in the hybrid drafts, and while it makes sense to use here since you need to concat the ciphertext and public key to send in the reply message, I think it might be worth writing out the structure of SSH_MSG_KEX_KEM_REPLY and defining each component for clarity, like\n>  \n> \u2002\u2002\u2002\u2002byte \u2002\u2002\u2002\u2002   SSH_MSG_KEX_KEM_REPLY \n> \u2002\u2002\u2002\u2002string \u2002\u2002\u2002\u2002K_S server's public host key \n> \u2002\u2002\u2002\u2002string \u2002\u2002\u2002\u2002S_REPLY \n> \u2002\u2002\u2002\u2002string \u2002\u2002\u2002\u2002signature of H\n> \n> where S_REPLY is the concatenation of S_CT (the cipher txt output of the Encaps function) and K_S. \n\n\n",
+      "createdAt": "2025-07-11T17:13:03Z",
+      "updatedAt": "2025-07-11T17:29:09Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "csosto-pk",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I think this is correct. The \"concatenation\" text was inadvertently pulled from the PQ-hybrid SSH draft. \n\nThe existing text\n\n> With this, the server sends S_REPLY  which is the concatenation of S_CT and S_PK. \n\n needs to be updated to say that the reply should include the ML-KEM ciphertext produced from the encapsulation of the client ML-KEM public key. \n\nIt would probably be nice to show it like the PQ-hybrid draft \n\n>          byte     SSH_MSG_KEX_HYBRID_INIT\n>          string   C_INIT\n> \n> where C_INIT is the ML-KEM ephemeral public key \n\n>          byte     SSH_MSG_KEX_HYBRID_REPLY\n>          string   K_S, server's public host key\n>          string   S_REPLY\n>          string   the signature on the exchange hash\n> \n> where S_REPLY is the ML-KEM ciphertext from the encapsulation to the client's ML-KEM ephemeral public key. \n\nI also suggest to remove ```SSH_MSG_KEXDH_INIT``` and just keep ```SSH_MSG_KEX_KEM_INIT```. \n\n> The client sends ~~SSH_MSG_KEXDH_INIT [RFC4253]~~ or SSH_MSG_KEX_KEM_INIT ~~[RFC5656]~~\n",
+          "createdAt": "2025-07-11T17:29:09Z",
+          "updatedAt": "2025-07-11T17:29:09Z"
+        }
+      ]
+    }
+  ],
   "pulls": [
     {
       "number": 1,

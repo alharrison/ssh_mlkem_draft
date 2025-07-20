@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-13T02:30:48.328602+00:00",
+  "timestamp": "2025-07-20T02:33:18.685111+00:00",
   "repo": "alharrison/ssh_mlkem_draft",
   "labels": [
     {
@@ -73,6 +73,22 @@
           "updatedAt": "2025-07-11T17:29:09Z"
         }
       ]
+    },
+    {
+      "number": 4,
+      "id": "I_kwDONlanz87BK9eZ",
+      "title": "Feddback from Quynh D.  about decapsulation failures 6/20/2025",
+      "url": "https://github.com/alharrison/ssh_mlkem_draft/issues/4",
+      "state": "OPEN",
+      "author": "csosto-pk",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The last sentence of the paragraph above the last paragraph on page 4 says \n\n> The client MUST abort using a disconnect message (SSH_MSG_DISCONNECT) with a SSH_DISCONNECT_KEY_EXCHANGE_FAILED as the reason if the S_CT length does not match the ML-KEM variant or decapsulation fails for any other reason.\". \n\nwhich is not correct.  There is no such decapsulation that fails with ML-KEM. \n\nFollowing the FIPS 205, the checks 1, 2 and 3 on page 37 must be done. If they all pass, the Decap is executed.  \n\nThe Decap (Algorithm 21) always outputs a 256-bit key. Decapsulation is the client  side computing a shared secret in a key exchange (after producing a shared secret, the client does not know if the other side has the same shared secret either with DH or ML-KEM), in other word a decapsulation is just a step of a key exchange. \"Decapsulation fails\" does not equal to \"the exchange fails\".  \n\nA MAC or a signature of a key exchange failing verification does not tell us whether or not both sides have different shared secrets: it just means that something is wrong.  \n\n- [ ] I would write something like this: \n\n> The client MUST abort using a disconnect message (SSH_MSG_DISCONNECT) with a SSH_DISCONNECT_KEY_EXCHANGE_FAILED as the reason if any of the 3 checks specified in Section 7.3 of FIPS 203 fail.\". \n\nIt does not need to say any further because the protocol spec already tells us what must be done when an exchange fails. \n\n- [ ] One more thing: ML-KEM768 should go with SHA-384 or SHA-512.  ML-KEM-1024 should go with SHA-512 for level 5 security.  Did you use SHA-384 because it is much more widely available than SHA-512 ?\n\n",
+      "createdAt": "2025-07-17T20:51:11Z",
+      "updatedAt": "2025-07-17T20:51:16Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [

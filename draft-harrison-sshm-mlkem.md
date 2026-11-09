@@ -3,7 +3,7 @@ title: "Module-Lattice Key Exchange in SSH"
 abbrev: "TODO - Abbreviation"
 category: std
 
-docname: draft-harrison-sshm-mlkem-01
+docname: draft-harrison-sshm-mlkem-02
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:

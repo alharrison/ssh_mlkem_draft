@@ -3,7 +3,7 @@ title: "Module-Lattice Key Exchange in SSH"
 abbrev: "TODO - Abbreviation"
 category: std
 
-docname: draft-harrison-sshm-mlkem-01
+docname: draft-harrison-sshm-mlkem-03
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
@@ -63,21 +63,27 @@ informative:
     seriesinfo:
       FIPS PUB: 203
     date: 12 Aug 2024
-  I-D.draft-ietf-sshm-mlkem-hybrid-kex:
+  NIST-SHA2:
     -:
-    target: https://datatracker.ietf.org/doc/draft-ietf-sshm-mlkem-hybrid-kex/
-    title: PQ/T Hybrid Key Exchange in SSH
+    target: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf
+    title: "Secure Hash Standard (SHS)"
     author:
       -
-        ins: P. Kampanakis
-        name: Panos Kampanakis
+        org: NIST
+    seriesinfo:
+      "NIST FIPS": "180-4"
+      DOI: 10.6028/NIST.FIPS.180-4
+    date: August 2015
+  NIST_PQ:
+    -:
+    target: https://csrc.nist.gov/projects/post-quantum-cryptography
+    title: "Post-Quantum Cryptography (PQC)"
+    author:
       -
-        ins: D. Stabila
-        name: Douglas Stebila
-      -
-        ins: T. Hansen
-        name: Torben Hansen
-        
+        org: NIST
+    date: 5 August 2026
+  RFC9794:
+  RFC10042:
 
 --- abstract
 
@@ -89,7 +95,7 @@ This document defines pure post-quantum key exchange methods based on Module-lat
 
 Secure Shell (SSH) [RFC4251] is a secure remote login protocol. The key exchange protocol described in [RFC4253] supports an extensible set of methods. The security of traditional key exchange methods used in Secure Shell (SSH) [RFC4251] relies on the algorithms being too computationally complex to be broken. The development of quantum computers poses a threat to the complexity of these algorithms. Given sufficiently powerful quantum computers, these traditional algorithms would be vulnerable to attack. Additionally, the threat of "harvest-now-decrypt-later" attacks could creates a risk in the current landscape before sufficiently powerful quantum computers are available. In this attack, the data would be collected and decrypted by these quantum computers at a later date.
 
-This document addresses the problem by proposing the use of post-quantum key encapsulation mechanisms (KEMs) to extend the SSH [RFC4253] key exchange. [I-D.draft-ietf-sshm-mlkem-hybrid-kex] introduces ML-KEM in PQ/T Hybrid mode [draft-ietf-pquip-pqt-hybrid-terminology] which combines the shared secrets established by an ECDH and a ML-KEM key exchange. This document uses ML-KEM in a single-algorithm scheme without combining it with a traditional ECDH exchange. 
+This document addresses the problem by proposing the use of post-quantum key encapsulation mechanisms (KEMs) to extend the SSH [RFC4253] key exchange. [RFC10042] introduces ML-KEM in PQ/T Hybrid mode [RFC9794] which combines the shared secrets established by an ECDH and a ML-KEM key exchange. This document uses ML-KEM in a single-algorithm scheme without combining it with a traditional ECDH exchange. 
 
 In the context of the [NIST_PQ], key exchange algorithms are formulated as key encapsulation mechanisms (KEMs), which consist of three algorithms:
 
@@ -159,17 +165,17 @@ Below we define
 ### mlkem512-sha256
 mlkem512-sha256 defines the ml-kem-512 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203]. K_PQ is encoded as mpint [RFC4251].
 
-The HASH function used in this key exchange [RFC4253] is SHA-256 [nist-sha2] [RFC6234]
+The HASH function used in this key exchange [RFC4253] is SHA-256 [NIST-SHA2] [RFC6234]
 
 ### mlkem768-sha256
 mlkem768-sha256 defines the ml-kem-768 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203]. K_PQ is encoded as mpint [RFC4251].
 
-The HASH function used in this key exchange [RFC4253] is SHA-256 [nist-sha2] [RFC6234]
+The HASH function used in this key exchange [RFC4253] is SHA-256 [NIST-SHA2] [RFC6234]
 
 ### mlkem1024-sha384
 mlkem1024-sha384 defines the ml-kem-1024 C_PK public key and ciphertext S_CT from the client and server respectively which are encoded as octet strings. The K_PQ shared secret is decapsulated from the ciphertext S_CT using the client post-quantum KEM private key as defined in [FIPS203]. K_PQ is encoded as mpint [RFC4251].
 
-The HASH function used in this key exchange [RFC4253] is SHA-384 [nist-sha2] [RFC6234]
+The HASH function used in this key exchange [RFC4253] is SHA-384 [NIST-SHA2] [RFC6234]
 
 
 # Security Considerations
